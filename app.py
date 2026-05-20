@@ -9,11 +9,44 @@ st.set_page_config(
 
 CANVA_URL = st.secrets.get("CANVA_URL", "")
 
+# ── CHATBOT EN SIDEBAR ─────────────────────────────────────────────────────────
+from chatbot import get_response
+
+with st.sidebar:
+    st.markdown("""
+    <div style="background:linear-gradient(135deg,#0A2463,#1E5FA8);
+         padding:14px 16px;border-radius:10px;margin-bottom:12px;">
+        <div style="color:white;font-size:15px;font-weight:900;">🤖 Pregúntame</div>
+        <div style="color:#D6E4F7;font-size:11px;">Sobre experiencia y habilidades</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    if "messages" not in st.session_state:
+        st.session_state.messages = [
+            {"role": "bot", "content": "¡Hola! Pregúntame sobre experiencia, habilidades, proyectos o formación."}
+        ]
+
+    # Mostrar historial
+    for m in st.session_state.messages:
+        if m["role"] == "user":
+            with st.chat_message("user"):
+                st.write(m["content"])
+        else:
+            with st.chat_message("assistant"):
+                st.write(m["content"])
+
+    # Input
+    question = st.chat_input("Escribe tu pregunta...")
+    if question:
+        st.session_state.messages.append({"role": "user", "content": question})
+        answer = get_response(question)
+        st.session_state.messages.append({"role": "bot", "content": answer})
+        st.rerun()
+
 # ── ESTILOS GLOBALES ───────────────────────────────────────────────────────────
 st.markdown("""
 <style>
 .main .block-container { max-width: 1300px; padding: 1.5rem 2rem; }
-section[data-testid="stSidebar"] { display: none; }
 
 .portfolio-header {
     background: linear-gradient(135deg, #0A2463 0%, #1E5FA8 100%);

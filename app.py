@@ -135,7 +135,7 @@ st.markdown("""
 # ── HEADER ─────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="portfolio-header">
-    <div class="portfolio-title">📊 Portfolio Profesional - Arturo Aguilar"      "-"           "correo: Arturofor2014@gmail.com</div>
+    <div class="portfolio-title">📊 Portfolio Profesional - Arturo Aguilar    -    correo: Arturofor2014@gmail.com</div>
     <div class="portfolio-sub">Data Scientist &amp; Financial Analytics Engineer</div>
 </div>
 """, unsafe_allow_html=True)

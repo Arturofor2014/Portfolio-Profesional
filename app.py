@@ -76,59 +76,62 @@ tab1, tab2 = st.tabs(["🗂️  Portafolio", "📄  Hoja de Vida"])
 # TAB 1: PORTAFOLIO
 # ══════════════════════════════════════════════════════════════════════════════
 with tab1:
-    col_projects, col_canva = st.columns([1, 1.2])
+    st.markdown('<div class="sec-header">🚀 Proyectos Desarrollados</div>', unsafe_allow_html=True)
 
-    with col_projects:
-        st.markdown('<div class="sec-header">🚀 Proyectos Desarrollados</div>', unsafe_allow_html=True)
+    projects = [
+        {
+            "title": "Estado de Resultado — Dashboard P&L",
+            "desc": "Dashboard financiero interactivo para análisis de Estado de Resultados. Visualización de ingresos, costos, gastos y utilidades con comparativo real vs presupuesto.",
+            "tags": ["Python", "Streamlit", "Plotly", "Finanzas", "P&L"],
+            "url": "https://estado-de-resultado-j2xcmkofq7q7zwnqs9ycmu.streamlit.app/",
+        },
+        {
+            "title": "Closing Dashboard — Cierre de Proyectos",
+            "desc": "Sistema de seguimiento de cierre de proyectos inmobiliarios. Monitoreo de métricas clave, cronogramas y estados de entrega en tiempo real.",
+            "tags": ["Python", "Streamlit", "Google Drive API", "Inmobiliario"],
+            "url": "https://closing-ydh6wy5habve4kbgqchkep.streamlit.app/",
+        },
+        {
+            "title": "Cash Flow — Flujo de Caja",
+            "desc": "Herramienta de análisis y proyección de flujo de caja. Visualización de entradas, salidas y saldo neto con proyecciones y escenarios financieros.",
+            "tags": ["Python", "Streamlit", "Plotly", "Flujo de Caja", "Finanzas"],
+            "url": "https://cashflow-rnqmupyaqzpdva42uw6ywt.streamlit.app/",
+        },
+        {
+            "title": "Cuadro de Mando Financiero",
+            "desc": "Dashboard ejecutivo con indicadores clave de desempeño financiero. Consolidación de métricas de rentabilidad, liquidez y solvencia para toma de decisiones gerenciales.",
+            "tags": ["Python", "Streamlit", "Plotly", "KPIs", "Google Drive API"],
+            "url": "https://cuadro-de-mando-financiero-m5kczw8rezx8fx8dvfcz8z.streamlit.app/",
+        },
+    ]
 
-        projects = [
-            {
-                "title": "Estado de Resultado — Dashboard P&L",
-                "desc": "Dashboard financiero interactivo para análisis de Estado de Resultados. Visualización de ingresos, costos, gastos y utilidades con comparativo real vs presupuesto.",
-                "tags": ["Python", "Streamlit", "Plotly", "Finanzas", "P&L"],
-                "url": "https://estado-de-resultado-j2xcmkofq7q7zwnqs9ycmu.streamlit.app/",
-            },
-            {
-                "title": "Closing Dashboard — Cierre de Proyectos",
-                "desc": "Sistema de seguimiento de cierre de proyectos inmobiliarios. Monitoreo de métricas clave, cronogramas y estados de entrega en tiempo real.",
-                "tags": ["Python", "Streamlit", "Google Drive API", "Inmobiliario"],
-                "url": "https://closing-ydh6wy5habve4kbgqchkep.streamlit.app/",
-            },
-            {
-                "title": "Cash Flow — Flujo de Caja",
-                "desc": "Herramienta de análisis y proyección de flujo de caja. Visualización de entradas, salidas y saldo neto con proyecciones y escenarios financieros.",
-                "tags": ["Python", "Streamlit", "Plotly", "Flujo de Caja", "Finanzas"],
-                "url": "https://cashflow-rnqmupyaqzpdva42uw6ywt.streamlit.app/",
-            },
-        ]
+    col1, col2 = st.columns(2)
+    for i, p in enumerate(projects):
+        tags_html = "".join(f'<span class="tag">{t}</span>' for t in p["tags"])
+        card = f"""
+        <div class="project-card">
+            <div class="project-title">{p['title']}</div>
+            <div class="project-desc">{p['desc']}</div>
+            <div class="project-tags">{tags_html}</div>
+            <a class="project-link" href="{p['url']}" target="_blank">🔗 Ver proyecto</a>
+        </div>
+        """
+        with col1 if i % 2 == 0 else col2:
+            st.markdown(card, unsafe_allow_html=True)
 
-        for p in projects:
-            tags_html = "".join(f'<span class="tag">{t}</span>' for t in p["tags"])
-            st.markdown(f"""
-            <div class="project-card">
-                <div class="project-title">{p['title']}</div>
-                <div class="project-desc">{p['desc']}</div>
-                <div class="project-tags">{tags_html}</div>
-                <a class="project-link" href="{p['url']}" target="_blank">🔗 Ver proyecto</a>
-            </div>
-            """, unsafe_allow_html=True)
-
-    with col_canva:
-        st.markdown('<div class="sec-header">🖼️ Presentación</div>', unsafe_allow_html=True)
-        if CANVA_URL:
-            st.markdown(f"""
-            <div style="width:100%;height:620px;background:#F4F6FB;
-                 box-shadow:0 2px 8px rgba(63,69,81,0.16);
-                 overflow:hidden;border-radius:10px;">
-              <iframe loading="lazy"
-                style="width:100%;height:100%;border:none;"
-                src="{CANVA_URL}"
-                allowfullscreen="allowfullscreen" allow="fullscreen">
-              </iframe>
-            </div>
-            """, unsafe_allow_html=True)
-        else:
-            st.info("Configura CANVA_URL en Secrets para mostrar la presentación.")
+    st.markdown("---")
+    st.markdown('<div class="sec-header">📄 Hoja de Vida</div>', unsafe_allow_html=True)
+    if CANVA_URL:
+        st.markdown(f"""
+        <a href="{CANVA_URL}" target="_blank"
+           style="display:inline-block;background:#0A2463;color:white;font-weight:700;
+                  font-size:14px;padding:12px 28px;border-radius:8px;text-decoration:none;
+                  box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+           🔗 Ver Hoja de Vida en Canva
+        </a>
+        """, unsafe_allow_html=True)
+    else:
+        st.info("Configura CANVA_URL en Secrets.")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # TAB 2: HOJA DE VIDA

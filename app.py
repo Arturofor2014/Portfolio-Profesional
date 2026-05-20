@@ -70,7 +70,17 @@ tab1, tab2 = st.tabs(["🖼️  Presentación", "🤖  Chatbot — Pregúntame"]
 with tab1:
     st.markdown("#### Navega la presentación directamente aquí")
     if CANVA_URL:
-        st.components.v1.iframe(CANVA_URL, height=580, scrolling=False)
+        st.markdown(f"""
+        <div style="position:relative;width:100%;height:0;padding-top:141.4286%;
+             box-shadow:0 2px 8px 0 rgba(63,69,81,0.16);margin-bottom:0.9em;
+             overflow:hidden;border-radius:8px;will-change:transform;">
+          <iframe loading="lazy"
+            style="position:absolute;width:100%;height:100%;top:0;left:0;border:none;padding:0;margin:0;"
+            src="{CANVA_URL}"
+            allowfullscreen="allowfullscreen" allow="fullscreen">
+          </iframe>
+        </div>
+        """, unsafe_allow_html=True)
     else:
         st.info("⚙️ Agrega el link público de Canva en `.streamlit/secrets.toml` → `CANVA_URL = '...'`")
         st.markdown("""

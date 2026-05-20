@@ -11,7 +11,7 @@ CANVA_URL = st.secrets.get("CANVA_URL", "")
 
 # ── CHATBOT — RESPUESTAS ───────────────────────────────────────────────────────
 RESPONSES = {
-    "Hola":            "Hola espero estes bien, al momento solo respondo cosas basicas estoy aprendiendo naci hace pocos días. Ahora dime ¿en que te ayudo?", 
+    "mmm":            "Hola espero estes bien, al momento solo respondo cosas basicas estoy aprendiendo naci hace pocos días. Ahora dime ¿en que te ayudo?", 
     "Hola":            "Hola espero estes bien", 
     "python":          "Tengo experiencia sólida en Python con pandas, NumPy, openpyxl, python-pptx, requests y Streamlit. Lo he usado para pipelines de extracción de datos desde PPTX y Excel, automatizar reportes financieros y desarrollar dashboards web.",
     "streamlit":       "He desarrollado dashboards web con Streamlit + Plotly integrados a Google Drive API, con autenticación, control de sesión (timeout 30 min), gráficas CAPEX interactivas y layout responsive para reportes ejecutivos.",

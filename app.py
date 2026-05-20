@@ -9,8 +9,40 @@ st.set_page_config(
 
 CANVA_URL = st.secrets.get("CANVA_URL", "")
 
-# ── CHATBOT EN SIDEBAR ─────────────────────────────────────────────────────────
-from chatbot import get_response
+# ── CHATBOT — RESPUESTAS ───────────────────────────────────────────────────────
+RESPONSES = {
+    "python":          "Tengo experiencia sólida en Python con pandas, NumPy, openpyxl, python-pptx, requests y Streamlit. Lo he usado para pipelines de extracción de datos desde PPTX y Excel, automatizar reportes financieros y desarrollar dashboards web.",
+    "streamlit":       "He desarrollado dashboards web con Streamlit + Plotly integrados a Google Drive API, con autenticación, control de sesión (timeout 30 min), gráficas CAPEX interactivas y layout responsive para reportes ejecutivos.",
+    "power bi":        "Manejo Power BI con Power Query, Power Pivot y DAX para dashboards de ventas, inventario y finanzas. También diseñé un Data Warehouse para migración a Power BI en JVLAT.",
+    "excel":           "Excel avanzado: VBA, Power Query, Power Pivot, DAX. He automatizado plantillas financieras con openpyxl y pandas para portafolios multi-propiedad con 20+ inversiones.",
+    "sql":             "Manejo SQL para consultas, extracción y transformación de datos en pipelines ETL y desarrollo de Data Warehouse.",
+    "finanzas":        "Experiencia financiera en P&L, Balance General, Flujo de Caja, Business Plan, presupuestos y proyecciones. He calculado IRR, NPV, CAP Rate, Cash-on-Cash, Equity Multiple y ROI en portafolios inmobiliarios.",
+    "irr":             "He calculado IRR, NPV, Equity Multiple, Cash-on-Cash, NIY y CAP Rate para portafolios de inversión inmobiliaria (Casco Antiguo y Santa Ana, 20+ propiedades).",
+    "dashboard":       "He creado dashboards en Streamlit, Power BI y Excel con autenticación, gráficas Plotly interactivas y conexión en tiempo real a Google Drive API para reportes ejecutivos.",
+    "experiencia":     "Experiencia:\n• Data Scientist – Casco Development & Partners (Oct 2025 – Presente)\n• Especialista Datamining – JVLAT (2024 – Mar 2025)\n• Analista Financiero – Varela Hermanos (2020 – 2024)\n• Analista BI – Mi Bus (2018 – 2019)\n• Analista Ventas – Huawei (2017 – 2018)",
+    "varela":          "En Varela Hermanos (2020–2024): presupuestos, P&L, Flujo de Caja, KPIs de rentabilidad, liquidez y logística, reportes para gerencias y vicepresidencias.",
+    "huawei":          "En Huawei Technologies (2017–2018): pronóstico cuatrimestral, cálculo de incentivos, análisis de impacto por inventario y posicionamiento A/B/C/D de producto.",
+    "mi bus":          "En Mi Bus (2018–2019): reportes en Excel, Power BI y R para inventario, compras y control operativo.",
+    "jvlat":           "En JVLAT (2024 – Marzo 2025): análisis B2B Sell In/Out, Trade y Warehouse para Chile, Colombia y Perú, segmentación de clientes y Data Warehouse para Power BI.",
+    "casco":           "En Casco Development & Partners (Oct 2025 – Presente): pipelines Python para extracción de métricas desde PPTX, dashboards Streamlit + Google Drive y automatización Excel para 20+ inversiones.",
+    "educacion":       "Formación:\n• Especialización en Econometría Aplicada (2023 – Presente)\n• Maestría en Banca y Finanzas – Univ. del Istmo (2020 – Presente)\n• Ingeniería Industrial – UIP (2008 – 2015)\n• Bachiller en Ciencias – Instituto América",
+    "maestria":        "Maestría en Banca y Finanzas – Universidad del Istmo (2020 – Presente) y Especialización en Econometría Aplicada y Análisis de Datos.",
+    "econometria":     "Especialización en Econometría Aplicada con RStudio, STATA, Python, SPSS y MATLAB.",
+    "habilidades":     "Habilidades:\n• Lenguajes: Python, R, SQL, VBA, DAX, JS, HTML, CSS\n• BI: Power BI, Streamlit, Plotly, Power Query\n• Data Eng: ETL, Data Warehouse, Google Drive API\n• ML: Scikit-learn, STATA, SPSS, MATLAB\n• Finanzas: IRR, NPV, P&L, CAPEX, Equity Multiple",
+    "stack":           "Stack: Python · Streamlit · Plotly · pandas · openpyxl · python-pptx · Google Drive API · Power BI · SQL · R · Excel · DAX · VBA.",
+    "machine learning":"Conocimientos en Machine Learning con Scikit-learn, estadística avanzada con STATA, SPSS y MATLAB.",
+    "proyecto":        "Proyectos:\n• Dashboard Estado de Resultado (P&L)\n• Closing Dashboard – proyectos inmobiliarios\n• Cash Flow – flujo de caja\n• Cuadro de Mando Financiero\n• Portafolio interactivo con chatbot",
+    "google":          "He trabajado con Google Drive API para integración de datos en tiempo real en dashboards Streamlit y Google Sheets como fuente de datos para reportes automatizados.",
+    "idioma":          "Español nativo e inglés intermedio.",
+    "ingles":          "Inglés intermedio — lectura técnica fluida, comunicación escrita y oral básica-intermedia.",
+}
+
+def get_response(user_input: str) -> str:
+    text = user_input.lower()
+    for keyword, response in RESPONSES.items():
+        if keyword in text:
+            return response
+    return "No tengo información sobre eso. Puedes preguntarme sobre: experiencia, habilidades, Python, Power BI, finanzas, dashboards, proyectos o educación."
 
 with st.sidebar:
     st.markdown("""

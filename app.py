@@ -58,6 +58,12 @@ with st.sidebar:
             {"role": "bot", "content": "¡Hola! Pregúntame sobre experiencia, habilidades, proyectos o formación."}
         ]
 
+    if st.button("🗑️ Limpiar chat", use_container_width=True):
+        st.session_state.messages = [
+            {"role": "bot", "content": "¡Hola! Pregúntame sobre experiencia, habilidades, proyectos o formación."}
+        ]
+        st.rerun()
+
     # Mostrar historial
     for m in st.session_state.messages:
         if m["role"] == "user":

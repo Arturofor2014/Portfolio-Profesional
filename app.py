@@ -181,6 +181,13 @@ with tab1:
             "tags": ["Python", "Scikit-learn", "Random Forest", "ML", "Streamlit"],
             "url": "https://ml-irr-financiero-q5vvou7wcmtw7zkrsod6sb.streamlit.app/",
         },
+        {
+            "title": "PORTFOLIO — TAX IMPACT DASHBOARD",
+            "desc": "Resumen de KPI mediante el uso de etiquetas por proyecto y por zona",
+            "tags": ["Python", "KPI", "Analisis", "Streamlit"],
+            "url": "https://plantilla-kpi-gckgkbxote5cuqtxwjcoxa.streamlit.app/",
+        },
+        
     ]
 
     col1, col2 = st.columns(2)

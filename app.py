@@ -16,7 +16,7 @@ RESPONSES = {
     "power bi":        "Manejo Power BI con Power Query, Power Pivot y DAX para dashboards de ventas, inventario y finanzas. También diseñé un Data Warehouse para migración a Power BI en JVLAT.",
     "ventas": "Experiencia en ventas, análisis comercial y gestión de estrategias para aumentar ingresos y fortalecer relaciones con clientes.",
     "logistica": "Conocimiento en logística, coordinación operativa y optimización de procesos de distribución y cadena de suministro.",
-    "data_mining": "Experiencia en Data Mining para extracción, análisis e interpretación de datos orientados a la toma de decisiones.",
+    "mining": "Experiencia en Data Mining para extracción, análisis e interpretación de datos orientados a la toma de decisiones.",
     "excel":           "Excel avanzado: VBA, Power Query, Power Pivot, DAX. He automatizado plantillas financieras con openpyxl y pandas para portafolios multi-propiedad con 20+ inversiones.",
     "sql":             "Manejo SQL para consultas, extracción y transformación de datos en pipelines ETL y desarrollo de Data Warehouse.",
     "finanzas":        "Experiencia financiera en P&L, Balance General, Flujo de Caja, Business Plan, presupuestos y proyecciones. He calculado IRR, NPV, CAP Rate, Cash-on-Cash, Equity Multiple y ROI en portafolios inmobiliarios.",

@@ -158,6 +158,12 @@ with tab1:
             "url": "https://estado-de-resultado-j2xcmkofq7q7zwnqs9ycmu.streamlit.app/",
         },
         {
+            "title": "Portafolio de Proyectos — Data Analytics & Logística",
+            "desc": "9 proyectos aplicados a cadena de suministro y transporte: KPIs de flota, predicción de demanda, detección de anomalías, optimización de rutas, pipeline ETL y más. Desarrollado como portafolio profesional para rol Senior Data Analyst.",
+            "tags": ["Python", "Streamlit", "Pandas", "NumPy", "Supply Chain", "ETL"],
+            "url": "https://portafoliologistica-ibrzxgyck3kmudpr8afhhz.streamlit.app/",
+        },
+        {
             "title": "Closing Dashboard — Cierre de Proyectos",
             "desc": "Sistema de seguimiento de cierre de proyectos inmobiliarios. Monitoreo de métricas clave, cronogramas y estados de entrega en tiempo real.",
             "tags": ["Python", "Streamlit", "Google Drive API", "Inmobiliario"],

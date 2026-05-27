@@ -63,7 +63,7 @@ with st.sidebar:
 
     if st.button("🗑️ Limpiar chat", use_container_width=True):
         st.session_state.messages = [
-            {"role": "bot", "content": "¡Hola! Pregúntame sobre experiencia, habilidades, proyectos o formación."}
+            {"role": "bot", "content": "¡Hola! Pregúntame sobre experiencia, habilidades, formación y lista de portafolio: 💰 Finanzas, 🚚 Logística, 📈 Ventas y Marketing, 🔍 Data Mining, 🛒 Compras y Tráfico, 👤 Perfil, 🛠️ Habilidades, 🎓 Educación, 💼 Experiencia."}
         ]
         st.rerun()
 

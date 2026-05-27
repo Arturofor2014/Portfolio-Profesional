@@ -35,6 +35,8 @@ RESPONSES = {
     "google":          "He trabajado con Google Drive API para integración de datos en tiempo real en dashboards Streamlit y Google Sheets como fuente de datos para reportes automatizados.",
     "idioma":          "Español nativo e inglés intermedio.",
     "ingles":          "Inglés intermedio — lectura técnica fluida, comunicación escrita y oral básica-intermedia.",
+    "logistica":       "He desarrollado un portafolio de 9 proyectos aplicados a cadena de suministro y transporte: KPIs de flota, predicción de demanda, detección de anomalías, optimización de rutas y pipelines ETL, usando Python, Streamlit y Pandas.",
+    "supply_chain":    "Tengo experiencia en análisis de datos logísticos: monitoreo de proveedores, rentabilidad por ruta, automatización de reportes operativos y simulación de costo-servicio para toma de decisiones gerenciales.",
 }
 
 def get_response(user_input: str) -> str:

@@ -66,7 +66,6 @@ with st.sidebar:
         ]
         st.rerun()
 
-    # Mostrar historial
     for m in st.session_state.messages:
         if m["role"] == "user":
             with st.chat_message("user"):
@@ -75,7 +74,6 @@ with st.sidebar:
             with st.chat_message("assistant"):
                 st.write(m["content"])
 
-    # Input
     question = st.chat_input("Escribe tu pregunta...")
     if question:
         st.session_state.messages.append({"role": "user", "content": question})
@@ -137,9 +135,9 @@ st.markdown("""
 # ── HEADER ─────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="portfolio-header">
-    <div class="portfolio-title">📊 Portfolio Profesional - Arturo Aguilar </div>
+    <div class="portfolio-title">📊 Portfolio Profesional - Arturo Aguilar</div>
     <div class="portfolio-sub">Data Scientist &amp; Financial Analytics Engineer</div>
-     <div class="portfolio-sub">correo: Arturofor2014@gmail.com</div>
+    <div class="portfolio-sub">correo: Arturofor2014@gmail.com</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -153,64 +151,86 @@ with tab1:
     st.markdown('<div class="sec-header">🚀 Proyectos Desarrollados</div>', unsafe_allow_html=True)
 
     projects = [
+        # ── FINANZAS ──
         {
+            "category": "Finanzas",
             "title": "Estado de Resultado — Dashboard P&L",
             "desc": "Dashboard financiero interactivo para análisis de Estado de Resultados. Visualización de ingresos, costos, gastos y utilidades con comparativo real vs presupuesto.",
             "tags": ["Python", "Streamlit", "Plotly", "Finanzas", "P&L"],
             "url": "https://estado-de-resultado-j2xcmkofq7q7zwnqs9ycmu.streamlit.app/",
         },
         {
-            "title": "Portafolio de Proyectos — Data Analytics & Logística",
-            "desc": "9 proyectos aplicados a cadena de suministro y transporte: KPIs de flota, predicción de demanda, detección de anomalías, optimización de rutas, pipeline ETL y más. Desarrollado como portafolio profesional para rol Senior Data Analyst.",
-            "tags": ["Python", "Streamlit", "Pandas", "NumPy", "Supply Chain", "ETL"],
-            "url": "https://portafoliologistica-ibrzxgyck3kmudpr8afhhz.streamlit.app/",
-        },
-        {
+            "category": "Finanzas",
             "title": "Closing Dashboard — Cierre de Proyectos",
             "desc": "Sistema de seguimiento de cierre de proyectos inmobiliarios. Monitoreo de métricas clave, cronogramas y estados de entrega en tiempo real.",
             "tags": ["Python", "Streamlit", "Google Drive API", "Inmobiliario"],
             "url": "https://closing-ydh6wy5habve4kbgqchkep.streamlit.app/",
         },
         {
+            "category": "Finanzas",
             "title": "Cash Flow — Flujo de Caja",
             "desc": "Herramienta de análisis y proyección de flujo de caja. Visualización de entradas, salidas y saldo neto con proyecciones y escenarios financieros.",
             "tags": ["Python", "Streamlit", "Plotly", "Flujo de Caja", "Finanzas"],
             "url": "https://cashflow-rnqmupyaqzpdva42uw6ywt.streamlit.app/",
         },
         {
+            "category": "Finanzas",
             "title": "Cuadro de Mando Financiero",
             "desc": "Dashboard ejecutivo con indicadores clave de desempeño financiero. Consolidación de métricas de rentabilidad, liquidez y solvencia para toma de decisiones gerenciales.",
             "tags": ["Python", "Streamlit", "Plotly", "KPIs", "Google Drive API"],
             "url": "https://cuadro-de-mando-financiero-m5kczw8rezx8fx8dvfcz8z.streamlit.app/",
         },
         {
+            "category": "Finanzas",
+            "title": "PORTFOLIO — TAX IMPACT DASHBOARD",
+            "desc": "Resumen de KPIs mediante etiquetas por proyecto y por zona. Análisis de impacto fiscal sobre portafolio de inversiones.",
+            "tags": ["Python", "KPI", "Análisis", "Streamlit"],
+            "url": "https://plantilla-kpi-gckgkbxote5cuqtxwjcoxa.streamlit.app/",
+        },
+        # ── LOGÍSTICA ──
+        {
+            "category": "Logística",
+            "title": "Portafolio de Proyectos — Data Analytics & Logística",
+            "desc": "9 proyectos aplicados a cadena de suministro y transporte: KPIs de flota, predicción de demanda, detección de anomalías, optimización de rutas, pipeline ETL y más.",
+            "tags": ["Python", "Streamlit", "Pandas", "NumPy", "Supply Chain", "ETL"],
+            "url": "https://portafoliologistica-ibrzxgyck3kmudpr8afhhz.streamlit.app/",
+        },
+        # ── DATA MINING ──
+        {
+            "category": "Data Mining",
             "title": "IRR Predictor — Real Estate ML",
             "desc": "Modelo de Machine Learning (Random Forest) para predecir el IRR de proyectos inmobiliarios. Incluye análisis exploratorio, predictor interactivo y métricas de rendimiento del modelo.",
             "tags": ["Python", "Scikit-learn", "Random Forest", "ML", "Streamlit"],
             "url": "https://ml-irr-financiero-q5vvou7wcmtw7zkrsod6sb.streamlit.app/",
         },
-        {
-            "title": "PORTFOLIO — TAX IMPACT DASHBOARD",
-            "desc": "Resumen de KPI mediante el uso de etiquetas por proyecto y por zona",
-            "tags": ["Python", "KPI", "Analisis", "Streamlit"],
-            "url": "https://plantilla-kpi-gckgkbxote5cuqtxwjcoxa.streamlit.app/",
-        },
-        
     ]
 
-    col1, col2 = st.columns(2)
-    for i, p in enumerate(projects):
-        tags_html = "".join(f'<span class="tag">{t}</span>' for t in p["tags"])
-        card = f"""
-        <div class="project-card">
-            <div class="project-title">{p['title']}</div>
-            <div class="project-desc">{p['desc']}</div>
-            <div class="project-tags">{tags_html}</div>
-            <a class="project-link" href="{p['url']}" target="_blank">🔗 Ver proyecto</a>
-        </div>
-        """
-        with col1 if i % 2 == 0 else col2:
-            st.markdown(card, unsafe_allow_html=True)
+    CATEGORIAS = {
+        "Finanzas":           "💰",
+        "Logística":          "🚚",
+        "Ventas y Marketing": "📈",
+        "Data Mining":        "🔍",
+        "Compras y Tráfico":  "🛒",
+    }
+
+    for cat, icon in CATEGORIAS.items():
+        cat_projects = [p for p in projects if p["category"] == cat]
+        if not cat_projects:
+            continue
+        st.markdown(f'<div class="sec-header" style="margin-top:20px;">{icon} {cat}</div>', unsafe_allow_html=True)
+        col1, col2 = st.columns(2)
+        for i, p in enumerate(cat_projects):
+            tags_html = "".join(f'<span class="tag">{t}</span>' for t in p["tags"])
+            card = f"""
+            <div class="project-card">
+                <div class="project-title">{p['title']}</div>
+                <div class="project-desc">{p['desc']}</div>
+                <div class="project-tags">{tags_html}</div>
+                <a class="project-link" href="{p['url']}" target="_blank">🔗 Ver proyecto</a>
+            </div>
+            """
+            with col1 if i % 2 == 0 else col2:
+                st.markdown(card, unsafe_allow_html=True)
 
     st.markdown("---")
     st.markdown('<div class="sec-header">📄 Hoja de Vida</div>', unsafe_allow_html=True)
@@ -326,4 +346,3 @@ with tab2:
                 {bullets_html}
             </div>
             """, unsafe_allow_html=True)
-

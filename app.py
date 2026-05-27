@@ -207,6 +207,14 @@ with tab1:
             "tags": ["Python", "Streamlit", "Pandas", "Forecast", "Pricing", "Supply Chain"],
             "url": "https://supplychain-commercialanalytics-ecgwkt5kebkfbmijxmimdp.streamlit.app/",
         },
+
+         {
+            "category": "Ventas y Marketing",
+            "title": "Pricing & Profitability",
+            "desc": "Import · Retail · Ecommerce · Fashion · Sneakers · Cosmetics · International Brands",
+            "tags": ["Python", "Streamlit", "Pandas", "Forecast", "Pricing", "Supply Chain"],
+            "url": "https://pricingstrategy-kqzjyjngujkyqb8jupgxy8.streamlit.app/",
+        },
         # ── DATA MINING ──
         {
             "category": "Data Mining",

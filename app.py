@@ -31,12 +31,13 @@ RESPONSES = {
     "habilidades":     "Habilidades:\n• Lenguajes: Python, R, SQL, VBA, DAX, JS, HTML, CSS\n• BI: Power BI, Streamlit, Plotly, Power Query\n• Data Eng: ETL, Data Warehouse, Google Drive API\n• ML: Scikit-learn, STATA, SPSS, MATLAB\n• Finanzas: IRR, NPV, P&L, CAPEX, Equity Multiple",
     "stack":           "Stack: Python · Streamlit · Plotly · pandas · openpyxl · python-pptx · Google Drive API · Power BI · SQL · R · Excel · DAX · VBA.",
     "machine learning":"Conocimientos en Machine Learning con Scikit-learn, estadística avanzada con STATA, SPSS y MATLAB.",
-    "proyecto":        "Proyectos:\n• Dashboard Estado de Resultado (P&L)\n• Closing Dashboard – proyectos inmobiliarios\n• Cash Flow – flujo de caja\n• Cuadro de Mando Financiero\n• Portafolio interactivo con chatbot",
+    "proyecto":        "Proyectos:\n• Dashboard Estado de Resultado (P&L)\n• Closing Dashboard – proyectos inmobiliarios\n• Cash Flow – flujo de caja\n• Cuadro de Mando Financiero\n• OC Shoes – Business Simulator\n• Portafolio interactivo con chatbot",
     "google":          "He trabajado con Google Drive API para integración de datos en tiempo real en dashboards Streamlit y Google Sheets como fuente de datos para reportes automatizados.",
     "idioma":          "Español nativo e inglés intermedio.",
     "ingles":          "Inglés intermedio — lectura técnica fluida, comunicación escrita y oral básica-intermedia.",
     "logistica":       "He desarrollado un portafolio de 9 proyectos aplicados a cadena de suministro y transporte: KPIs de flota, predicción de demanda, detección de anomalías, optimización de rutas y pipelines ETL, usando Python, Streamlit y Pandas.",
     "supply_chain":    "Tengo experiencia en análisis de datos logísticos: monitoreo de proveedores, rentabilidad por ruta, automatización de reportes operativos y simulación de costo-servicio para toma de decisiones gerenciales.",
+    "oc shoes":        "OC Shoes es un simulador empresarial completo que modela toda la cadena comercial de una marca de zapatillas: producción, logística, costos, pricing, forecast de ventas, presupuesto y dashboard ejecutivo con sell through y rotación de inventario.",
 }
 
 def get_response(user_input: str) -> str:
@@ -194,6 +195,14 @@ with tab1:
             "desc": "9 proyectos aplicados a cadena de suministro y transporte: KPIs de flota, predicción de demanda, detección de anomalías, optimización de rutas, pipeline ETL y más.",
             "tags": ["Python", "Streamlit", "Pandas", "NumPy", "Supply Chain", "ETL"],
             "url": "https://portafoliologistica-ibrzxgyck3kmudpr8afhhz.streamlit.app/",
+        },
+        # ── VENTAS Y MARKETING ──
+        {
+            "category": "Ventas y Marketing",
+            "title": "OC Shoes — Business Simulator",
+            "desc": "Simulador empresarial completo para una marca de zapatillas: planificación de producción, logística, landed cost, estrategia de precio, forecast de ventas 12 meses, presupuesto comercial y dashboard ejecutivo con sell through y rotación de inventario.",
+            "tags": ["Python", "Streamlit", "Pandas", "Forecast", "Pricing", "Supply Chain"],
+            "url": "https://supplychain-commercialanalytics-ecgwkt5kebkfbmijxmimdp.streamlit.app/",
         },
         # ── DATA MINING ──
         {

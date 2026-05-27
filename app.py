@@ -58,7 +58,7 @@ with st.sidebar:
 
     if "messages" not in st.session_state:
         st.session_state.messages = [
-            {"role": "bot", "content": "¡Hola! Pregúntame sobre mi experiencia, habilidades, mi portafolio tiene estas secciones 💰 Finanzas, 🚚 Logística, 📈 Ventas y Marketing, 🔍 Data Mining, 🛒 Compras y Tráfico, 👤 Perfil, 🛠️ Habilidades, 🎓 Educación, 💼 Experiencia o formación."}
+            {"role": "bot", "content": "¡Hola! Pregúntame sobre mi experiencia o habilidades. Mi portafolio tiene estas secciones 💰 Finanzas, 🚚 Logística, 📈 Ventas y Marketing, 🔍 Data Mining, 🛒 Compras y Tráfico, 👤 Perfil, 🛠️ Habilidades, 🎓 Educación, 💼 Experiencia o formación."}
         ]
 
     if st.button("🗑️ Limpiar chat", use_container_width=True):

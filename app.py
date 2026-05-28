@@ -208,6 +208,14 @@ with tab1:
             "url": "https://supplychain-commercialanalytics-ecgwkt5kebkfbmijxmimdp.streamlit.app/",
         },
 
+                {
+        "category": "Ventas y Marketing",
+        "title": "Arturo Aguilar Bot",
+        "desc": "Chatbot interactivo desarrollado para responder consultas sobre experiencia profesional, habilidades técnicas, proyectos y analítica de datos. Integra automatización y acceso dinámico a información utilizando tecnologías modernas y servicios en la nube.",
+        "tags": ["Python", "Streamlit", "Google Sheets API", "Chatbot", "AI", "Automation"],
+        "url": "https://chatbot-jghalbqgnhn5asnnfodfam.streamlit.app/"
+        },
+
          {
             "category": "Ventas y Marketing",
             "title": "Pricing & Profitability",

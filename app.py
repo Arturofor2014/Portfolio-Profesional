@@ -29,7 +29,7 @@ RESPONSES = {
     "jvlat":           "En JVLAT (2024 – Marzo 2025): análisis B2B Sell In/Out, Trade y Warehouse para Chile, Colombia y Perú, segmentación de clientes y Data Warehouse para Power BI.",
     "casco":           "En Casco Development & Partners (Oct 2025 – Presente): pipelines Python para extracción de métricas desde PPTX, dashboards Streamlit + Google Drive y automatización Excel para 20+ inversiones.",
     "educacion":       "Formación:\n• Especialización en Econometría Aplicada (2023 – Presente)\n• Maestría en Banca y Finanzas – Univ. del Istmo (2020 – Presente)\n• Ingeniería Industrial – UIP (2008 – 2015)\n• Bachiller en Ciencias – Instituto América",
-    "maestria":        "Maestría en Banca y Finanzas – Universidad del Istmo (2020 – Presente) y Especialización en Econometría Aplicada y Análisis de Datos.",
+    "maestria":        "Maestría en Banca y Finanzas – Universidad del Istmo (2020 – En curso) y Especialización en Econometría Aplicada y Análisis de Datos.",
     "econometria":     "Especialización en Econometría Aplicada con RStudio, STATA, Python, SPSS y MATLAB.",
     "habilidades":     "Habilidades:\n• Lenguajes: Python, R, SQL, VBA, DAX, JS, HTML, CSS\n• BI: Power BI, Streamlit, Plotly, Power Query\n• Data Eng: ETL, Data Warehouse, Google Drive API\n• ML: Scikit-learn, STATA, SPSS, MATLAB\n• Finanzas: IRR, NPV, P&L, CAPEX, Equity Multiple",
     "stack":           "Stack: Python · Streamlit · Plotly · pandas · openpyxl · python-pptx · Google Drive API · Power BI · SQL · R · Excel · DAX · VBA.",

@@ -171,6 +171,13 @@ with tab1:
             "url": "https://closing-ydh6wy5habve4kbgqchkep.streamlit.app/",
         },
         {
+            "category": "DCF Calculator",
+            "title": "Caluladora para modelar flujo de cajas descontados para proyectos de inversión",
+            "desc": "Proyectas tus Inflows y tus Outflows para estimar tus indicadores de IRR, Cash on Cash , VAN, ROI , CAPRATE U OTROS",
+            "tags": ["Python", "Streamlit", "Google Drive API", "Inmobiliario"],
+            "url": "https://dcfcalculator-4hhpdwbohezxsjnuxcn7lf.streamlit.app/",
+        },
+        {
             "category": "Finanzas",
             "title": "Cash Flow — Flujo de Caja",
             "desc": "Herramienta de análisis y proyección de flujo de caja. Visualización de entradas, salidas y saldo neto con proyecciones y escenarios financieros.",
